@@ -22,11 +22,12 @@ func responseTime(url string) {
 
 func main() {
   urls := make([]string, 3)
-  urls[0] = "https://www.usa.gov"
+  urls[2] = "https://www.usa.gov"
   urls[1] = "https://www.gov.uk"
-  urls[2] = "https://www.youtube.com"
+  urls[0] = "https://www.youtube.com"
 
   for _, u := range urls {
-  responseTime(u)
+  go responseTime(u)
+  time.Sleep(time.Second * 5)
   }
 }
